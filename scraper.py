@@ -60,11 +60,11 @@ def input_to_scrape(argument):
 
             #   We can now print the external links!
 
-            for i, div_element in enumerate(external_link_comp, start=1):
+            for div_element in external_link_comp:
                 if div_element is not None:
                     link = div_element.find('a', class_='sign-up-modal__company_webiste')
                     if link is not None:
-                        print(f"{i}. {link['href']}\n")
+                        print(link['href'],"\n")
         
         case 2:
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"}
@@ -105,11 +105,11 @@ def input_to_scrape(argument):
                 external_link = soup.find(class_="sign-up-modal__direct-apply-on-company-site")
                 external_link_comp.append(external_link)
 
-            for i, div_element in enumerate(external_link_comp, start=1):
+            for div_element in external_link_comp:
                 if div_element is not None:
                     link = div_element.find('a', class_='sign-up-modal__company_webiste')
                     if link is not None:
-                        print(f"{i}. {link['href']}\n")  
+                        print(link['href'],"\n")
 
         case 3:
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"}
@@ -150,11 +150,11 @@ def input_to_scrape(argument):
                 external_link = soup.find(class_="sign-up-modal__direct-apply-on-company-site")
                 external_link_comp.append(external_link)
 
-            for i, div_element in enumerate(external_link_comp, start=1):
+            for div_element in external_link_comp:
                 if div_element is not None:
                     link = div_element.find('a', class_='sign-up-modal__company_webiste')
                     if link is not None:
-                        print(f"{i}. {link['href']}\n")         
+                        print(link['href'],"\n")         
         case _:
             return "Not a valid command!"
 
